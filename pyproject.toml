@@ -1,0 +1,85 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "py2d-game"
+version = "1.0.0-beta"
+description = "A powerful and easy-to-use Python library for creating 2D games"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "En-Hussain", email = "support@py2d-game.com"}
+]
+maintainers = [
+    {name = "En-Hussain", email = "support@py2d-game.com"}
+]
+keywords = ["game", "2d", "pygame", "engine", "development", "python"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Games/Entertainment",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.7"
+dependencies = [
+    "pygame>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov>=2.0",
+    "black>=21.0",
+    "flake8>=3.8",
+]
+
+[project.urls]
+Homepage = "https://github.com/En-Hussain/py2d-game"
+Documentation = "https://github.com/En-Hussain/py2d-game#readme"
+Repository = "https://github.com/En-Hussain/py2d-game.git"
+Issues = "https://github.com/En-Hussain/py2d-game/issues"
+Changelog = "https://github.com/En-Hussain/py2d-game/blob/main/CHANGELOG.md"
+
+[project.scripts]
+py2d-game = "py2d_game.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["py2d_game*"]
+
+[tool.setuptools.package-data]
+py2d_game = ["*.py"]
+
+[tool.black]
+line-length = 88
+target-version = ['py37']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
