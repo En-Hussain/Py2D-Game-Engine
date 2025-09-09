@@ -263,7 +263,7 @@ We welcome contributions! Please read the contributing guide before submitting p
 
 For technical support and questions, please contact:
 
-- **Email**: support@py2d-game.com
+- **Email**: hsn.nati3@gmail.com
 - **GitHub**: [En-Hussain](https://github.com/En-Hussain)
 - **Issues**: [GitHub Issues](https://github.com/En-Hussain/py2d-game/issues)
 
